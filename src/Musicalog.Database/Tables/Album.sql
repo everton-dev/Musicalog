@@ -1,0 +1,26 @@
+﻿USE Musicalog
+GO
+
+IF OBJECT_ID('Album') IS NOT NULL
+BEGIN
+	PRINT '<< DROP TABLE Album >>'
+	DROP TABLE Album
+END
+GO
+
+CREATE TABLE Album(
+	Id				INT				IDENTITY(1,1)	NOT NULL,
+	Title			VARCHAR(150)					NOT NULL,
+	ArtistName		VARCHAR(150)					NOT NULL,
+	TypeAlbumId		SMALLINT						NOT NULL,
+	Stock			INT								NOT NULL,
+	CONSTRAINT PK_Album PRIMARY KEY (Id),
+	CONSTRAINT FK_Album_TypeAlbum_TypeAlbumId FOREIGN KEY(TypeAlbumId) REFERENCES TypeAlbum (Id)
+)
+GO
+
+IF OBJECT_ID('Album') IS NOT NULL
+BEGIN
+	PRINT '<< CREATE TABLE Album >>'
+END
+GO

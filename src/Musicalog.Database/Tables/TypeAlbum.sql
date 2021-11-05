@@ -1,0 +1,22 @@
+﻿USE Musicalog
+GO
+
+IF OBJECT_ID('TypeAlbum') IS NOT NULL
+BEGIN
+	PRINT '<< DROP TABLE TypeAlbum >>'
+	DROP TABLE TypeAlbum
+END
+GO
+
+CREATE TABLE TypeAlbum(
+	Id				SMALLINT IDENTITY(1,1)	NOT NULL,
+	Description		VARCHAR(100)			NOT NULL,
+	CONSTRAINT PK_TypeAlbum PRIMARY KEY (Id)
+)
+GO
+
+IF OBJECT_ID('TypeAlbum') IS NOT NULL
+BEGIN
+	PRINT '<< CREATE TABLE TypeAlbum >>'
+END
+GO

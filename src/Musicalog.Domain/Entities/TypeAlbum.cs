@@ -8,10 +8,11 @@ namespace Musicalog.Domain.Entities
         {
         }
 
-        public TypeAlbum(short id, string description)
+        public TypeAlbum(short id, string description, List<Album> albums)
         {
             Id = id;
             Description = description;
+            Albums = albums ?? new List<Album>();
         }
 
         public short Id { get; set; }

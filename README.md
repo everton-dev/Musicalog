@@ -1,0 +1,2 @@
+# Musicalog
+Album manager API.
